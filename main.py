@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request
-
+import database
 
 app = Flask(__name__)
 
@@ -22,7 +22,9 @@ def cadastrar():
     senhaConfirma = request.form["confirmacao"]
     aceiteContrato = request.form["contrato"]
     aceiteLgpd = request.form["lgpd"]
-        
+    
+    database.inserir_dados(nomeCompleto, cpf, str(dataNascimento), email, telefone, endereco, cep, numero, logradouro, senha, aceiteContrato, aceiteLgpd) 
+    #database.inserir_dados(nomeCompleto, cpf, str(dataNascimento), email, telefone, endereco, int(cep), int(numero), logradouro, senha, str(aceiteContrato), str(aceiteLgpd))    
     return render_template("index.html")
 
 if __name__ == '__main__':
