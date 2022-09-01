@@ -23,9 +23,17 @@ def cadastrar():
     aceiteContrato = request.form["contrato"]
     aceiteLgpd = request.form["lgpd"]
     
-    database.inserir_dados(nomeCompleto, cpf, str(dataNascimento), email, telefone, endereco, cep, numero, logradouro, senha, aceiteContrato, aceiteLgpd) 
+    database.inserir_dados_usuarios(nomeCompleto, cpf, str(dataNascimento), email, telefone, endereco, cep, numero, logradouro, senha, aceiteContrato, aceiteLgpd) 
      
     return render_template("index.html")
+
+@app.route('/cadastrar_usuarios')
+def cadastrar_usuarios():
+    return render_template('cadastro_usuarios.html')
+
+@app.route('/adicionar_livros')
+def adicionar_livros():
+    return render_template('adicionar_livros.html')
 
 if __name__ == '__main__':
     app.run()
