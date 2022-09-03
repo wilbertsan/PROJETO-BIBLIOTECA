@@ -27,9 +27,26 @@ def cadastrar():
      
     return render_template("index.html")
 
+
 @app.route('/cadastrar_usuarios')
 def cadastrar_usuarios():
     return render_template('cadastro_usuarios.html')
+
+@app.route('/adicionar_livro', methods=["POST"])
+def adicionar_livro():
+    autor = request.form["autor"]
+    nomeLivro = request.form["nomelivro"]
+    edicao = request.form["edicao"]
+    editora = request.form["editora"]
+    genero = request.form["genero"]
+    seccao = request.form["seccao"]
+    prateleira = request.form["prateleira"]
+    status = request.form["status"]
+    
+    
+    database.inserir_dados_livro(autor, nomeLivro, edicao, editora, genero, seccao, prateleira, status)
+     
+    return render_template("index.html")
 
 @app.route('/adicionar_livros')
 def adicionar_livros():
