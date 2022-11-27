@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deletar Livros</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    
+</head>
+<body>
+    <h1>Deletar Livros</h1>
+    <form action="/deleta_livro" method="post">
+        <div class="row">
+            <div class="col-md-3">
+                <label for="id" class="form-label">Id Livro</label>
+                <input type="text" class="form-control" id="id" name="id" placeholder="">
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <br><br>
+                <button type="submit" class="btn btn-primary">Deletar</button>
+                <button type="reset" class="btn btn-primary">Limpar</button>
+            </div>
+        </div>
+    </form>
+</body>
+</html>
